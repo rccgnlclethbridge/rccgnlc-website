@@ -43,8 +43,11 @@ export const metadata: Metadata = {
     "University of Lethbridge Christian Fellowship",
   ],
   icons: {
-    icon: "/images/arise-2025.png",
-    apple: "/images/arise-2025.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "64x64", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     type: "website",
