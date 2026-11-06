@@ -37,7 +37,7 @@ export default function RidesPage() {
           </div>
 
           <a
-            href="https://thehilltopch.ca/rides"
+            href="https://www.thehilltopch.ca/rides"
             className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-montserrat text-[12.5px] font-bold px-4 py-2.5 rounded-full transition-all shadow-xs shrink-0"
             title="Looking for Hilltop Youth Church Rides? Go to thehilltopch.ca/rides"
           >
@@ -50,7 +50,7 @@ export default function RidesPage() {
       {/* Embedded Live Rides Booking System */}
       <div className="max-w-[720px] mx-auto px-[10px]">
         <iframe
-          src="https://thehilltopch.ca/rides?church=new-life"
+          src="https://www.thehilltopch.ca/rides?church=new-life&theme=light"
           width="100%"
           height="1020"
           allow="clipboard-write"
