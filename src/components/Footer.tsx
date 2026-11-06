@@ -126,13 +126,43 @@ export default function Footer() {
               Location &amp; Quick Links
             </h3>
 
-            <div className="text-white/85 space-y-1">
+            <div className="text-white/85 space-y-2">
               <strong className="font-semibold text-white block">
                 Sanctuary Address
               </strong>
-              <p>
+              <p className="text-[13.5px] text-white/80 leading-relaxed">
                 {churchInfo.address.street} {churchInfo.address.cityStateZip}
               </p>
+              <div className="pt-1">
+                <a
+                  href={churchInfo.address.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-[#4F7942] border border-white/20 hover:border-[#4F7942] text-white text-[12.5px] font-semibold px-4 py-2 rounded-full transition-all group shadow-xs"
+                >
+                  <svg
+                    className="w-3.5 h-3.5 text-[#8ce078] group-hover:text-white transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <span>Get Directions on Google Maps</span>
+                  <span>↗</span>
+                </a>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-2 pt-2 text-[13.5px]">
@@ -176,19 +206,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Embedded Google Map */}
-        <div className="w-full py-8">
-          <iframe
-            loading="lazy"
-            src={churchInfo.address.googleMapsEmbedUrl}
-            title={churchInfo.address.full}
-            aria-label={churchInfo.address.full}
-            className="w-full h-[220px] border-0 rounded-2xl opacity-90 hover:opacity-100 transition-opacity"
-          />
-        </div>
-
         {/* Bottom Copyright Bar */}
-        <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-white/60">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-white/60">
           <p>{churchInfo.copyright}</p>
           <p>
             234 13 Street North, Lethbridge, AB •{" "}

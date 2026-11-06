@@ -19,6 +19,8 @@ export const churchInfo = {
     mailing: "P.O. Box 1632, Lethbridge AB T1J 4K3",
     googleMapsEmbedUrl:
       "https://maps.google.com/maps?q=234%2013%20St%20N%20&t=m&z=10&output=embed&iwloc=near",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=234+13+Street+North+Lethbridge+AB+T1H+2R7",
   },
   contact: {
     email: "contact@rccgnlclethbridge.ca",

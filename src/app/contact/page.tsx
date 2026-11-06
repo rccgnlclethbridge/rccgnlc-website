@@ -234,6 +234,30 @@ export default function ContactPage() {
                   Book Your Sunday Ride →
                 </Link>
               </div>
+
+              {/* Sanctuary Location & Map on Contact Page */}
+              <div className="pt-3 border-t border-gray-200 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[13px] font-semibold text-[#1d1d23]">
+                    Sanctuary Location (234 13 St N)
+                  </span>
+                  <a
+                    href={churchInfo.address.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[12px] font-semibold text-[#4F7942] hover:underline"
+                  >
+                    Get Directions ↗
+                  </a>
+                </div>
+                <iframe
+                  loading="lazy"
+                  src={churchInfo.address.googleMapsEmbedUrl}
+                  title={churchInfo.address.full}
+                  aria-label={churchInfo.address.full}
+                  className="w-full h-[190px] border border-gray-200 rounded-xl"
+                />
+              </div>
             </div>
 
             {/* Right Column: Dynamic Form Based on Active Tab (7 cols) */}
