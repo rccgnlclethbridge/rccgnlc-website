@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { churchInfo } from "@/data/churchData";
+import HomeHeroVideo from "@/components/HomeHeroVideo";
 import LatestSermonsSection from "@/components/LatestSermonsSection";
 import InstagramReelsSection from "@/components/InstagramReelsSection";
 
@@ -8,100 +9,9 @@ export default function HomePage() {
   return (
     <div className="w-full">
       {/* =====================================================================
-          SECTION 1: HERO BANNER WITH BACKGROUND IMAGE & GREEN INFO BOXES
+          SECTION 1: DYNAMIC VIDEO REEL HERO BANNER & CELEBRATION INFO BOXES
           ===================================================================== */}
-      <section
-        className="relative w-full min-h-[472px] md:min-h-[540px] flex items-center justify-center py-[70px] bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: 'url("/images/hero-home.jpg")' }}
-      >
-        {/* Dark Overlay (opacity 0.5) */}
-        <div className="absolute inset-0 bg-black/50" />
-
-        {/* Hero Content Container */}
-        <div className="relative z-10 max-w-[1140px] w-full mx-auto px-5">
-          <div className="max-w-[760px] mx-auto text-center">
-            <div className="h-[20px] md:h-[40px]" />
-            <h1 className="text-[26px] md:text-[33px] font-semibold leading-[1.45] md:leading-[52px] text-white mb-10">
-              A place where people reconcile with God and enjoy life in
-              abundance
-            </h1>
-
-            {/* 2 Green Infoboxes */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-8">
-              {/* Celebration Service Card */}
-              <div className="bg-[#4F7942] border-2 border-[#4F7942] hover:border-transparent rounded-[10px] p-6 text-white transition-all duration-300 hover:shadow-xl flex flex-col justify-between">
-                <div>
-                  <h2 className="text-[18px] font-bold leading-[1.2] mb-2 text-white">
-                    Celebration Service
-                  </h2>
-                  <p className="text-[14px] font-normal leading-[1.6] text-white/95">
-                    Join us every first Sunday of the month starting with Sunday
-                    School at 9:30 AM for a spirit-filled celebration service.
-                  </p>
-                </div>
-              </div>
-
-              {/* Youth & Young Adults -> The Hilltop Church Card */}
-              <a
-                href={churchInfo.hilltopChurch.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-[#4F7942] border-2 border-[#4F7942] hover:border-white/50 rounded-[10px] p-6 text-white transition-all duration-300 hover:shadow-xl flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <h2 className="text-[18px] font-bold leading-[1.2] text-white group-hover:underline">
-                      Youth &amp; Young Adults — Hilltop Church
-                    </h2>
-                    <span className="text-xs bg-white/20 px-2 py-0.5 rounded font-medium shrink-0">
-                      Visit ↗
-                    </span>
-                  </div>
-                  <p className="text-[14px] font-normal leading-[1.6] text-white/95">
-                    Looking for our youth &amp; young adults community? Join{" "}
-                    <strong className="font-semibold">The Hilltop Church</strong>{" "}
-                    every Sunday at 12:00 PM!
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            {/* CTA Buttons: PLAN A VISIT, TAKE A STEP NOW & BOOK A SUNDAY RIDE */}
-            <div className="pt-2 pb-4 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/contact?tab=visit"
-                className="inline-block bg-[#4F7942] hover:bg-[#3f6334] text-white font-montserrat text-[15px] md:text-[16px] font-semibold px-7 py-3.5 rounded-[4px] transition-colors shadow-md"
-              >
-                PLAN YOUR VISIT
-              </Link>
-              <Link
-                href="/rides"
-                className="inline-block bg-white/15 hover:bg-white/25 backdrop-blur-xs border border-white/70 text-white font-montserrat text-[15px] md:text-[16px] font-semibold px-7 py-3.5 rounded-[4px] transition-colors shadow-md"
-              >
-                NEED A SUNDAY RIDE?
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Triangle Shape Divider */}
-        <div
-          className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none flex justify-center"
-          aria-hidden="true"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
-            className="w-[45%] h-[30px] md:h-[50px] block"
-          >
-            <path
-              fill="#080808"
-              d="M500,98.9L0,6.1V0h1000v6.1L500,98.9z"
-            />
-          </svg>
-        </div>
-      </section>
+      <HomeHeroVideo />
 
       {/* =====================================================================
           SECTION 2: COME AND EXPERIENCE A NEW LIFE IN JESUS CHRIST!
