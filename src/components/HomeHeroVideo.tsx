@@ -17,9 +17,9 @@ export default function HomeHeroVideo() {
   };
 
   return (
-    <section className="relative w-full min-h-[620px] sm:min-h-[700px] md:min-h-[760px] lg:min-h-[84vh] flex flex-col justify-between overflow-hidden bg-[#070b07]">
+    <section className="relative w-full min-h-[580px] sm:min-h-[650px] md:min-h-[740px] lg:min-h-[85vh] flex flex-col justify-between overflow-hidden bg-[#070b07]">
       {/* ===================================================================
-          ENHANCED MERGED REEL: Anchored to TOP 16-20% so heads & faces are in full view
+          FULL-BLEED ENHANCED REEL: Framed at top 14-18% so faces & expressions shine
           =================================================================== */}
       <video
         ref={videoRef}
@@ -30,7 +30,7 @@ export default function HomeHeroVideo() {
         preload="auto"
         poster="/images/hero-merged-poster.jpg"
         onLoadedData={() => setHasLoaded(true)}
-        className="absolute inset-0 w-full h-full object-cover object-[center_14%] sm:object-[center_17%] md:object-[center_20%] scale-[1.01] transition-opacity duration-1000"
+        className="absolute inset-0 w-full h-full object-cover object-[center_14%] sm:object-[center_16%] md:object-[center_18%] scale-[1.01] transition-opacity duration-1000"
         aria-hidden="true"
       >
         <source src="/videos/nlc-worship-merged.mp4" type="video/mp4" />
@@ -43,57 +43,174 @@ export default function HomeHeroVideo() {
         }`}
         style={{
           backgroundImage: 'url("/images/hero-merged-poster.jpg")',
-          backgroundPosition: "center 20%",
+          backgroundPosition: "center 18%",
         }}
       />
 
       {/* ===================================================================
-          PROFESSIONAL CINEMATIC VIGNETTE OVERLAY
-          - Lighter center (via-black/25) keeps faces bright and natural
-          - Deepened top & bottom ensures navigation and typography pop
+          SUBTLE CINEMATIC VIGNETTE: Keeps 80% of the video canvas clear & vivid
           =================================================================== */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-black/85 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/80 pointer-events-none" />
 
-      {/* Subtle top spacer */}
-      <div className="h-6 md:h-10 pointer-events-none" />
+      {/* Top Spacer */}
+      <div className="h-8 md:h-12 pointer-events-none" />
 
       {/* ===================================================================
-          MAIN HERO CONTENT: Clean, elevated, spacious typography
+          CENTER HERO CONTENT: Uncluttered Transformation Church Editorial Style
           =================================================================== */}
-      <div className="relative z-10 max-w-[1140px] w-full mx-auto px-5 py-6 sm:py-10 flex-1 flex flex-col items-center justify-center text-center">
-        {/* Subtle Church Kicker */}
-        <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/20 text-white text-[12px] md:text-[13px] font-medium tracking-[0.15em] uppercase px-4 py-1.5 rounded-full mb-5 shadow-sm transition-colors">
-          <span className="w-2 h-2 rounded-full bg-[#5cb85c] animate-pulse" />
-          <span>RCCG NEW LIFE CHAPEL LETHBRIDGE</span>
-        </div>
-
-        {/* Primary Headline */}
-        <h1 className="text-[32px] sm:text-[42px] md:text-[50px] lg:text-[56px] font-bold leading-[1.18] text-white max-w-[920px] mb-5 tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.75)]">
-          A place where people reconcile with God and enjoy life in abundance
-        </h1>
-
-        {/* Subtitle with Service Times & Address */}
-        <p className="text-[15px] sm:text-[17px] md:text-[18px] text-white/95 max-w-[660px] mb-8 font-normal leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-          Join us every Sunday at <strong className="font-semibold text-white">9:30 AM</strong> at{" "}
-          <span className="text-white">234 13 Street North, Lethbridge</span>. Experience vibrant worship, biblical truth, and caring fellowship.
+      <div className="relative z-10 max-w-[1100px] w-full mx-auto px-5 py-12 md:py-16 flex-1 flex flex-col items-center justify-center text-center">
+        {/* Clean Tracked Uppercase Overline */}
+        <p className="text-[12px] sm:text-[13px] md:text-[14px] font-bold tracking-[0.28em] uppercase text-[#8ce078] mb-3.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          WELCOME TO {churchInfo.name}
         </p>
 
-        {/* Refined Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+        {/* Monumental Display Headline */}
+        <h1 className="font-montserrat text-[34px] sm:text-[48px] md:text-[60px] lg:text-[68px] font-extrabold uppercase leading-[1.06] tracking-tight text-white max-w-[920px] mb-5 drop-shadow-[0_6px_24px_rgba(0,0,0,0.75)]">
+          Come and Experience <br className="hidden sm:inline" />
+          <span className="text-white">A New Life.</span>
+        </h1>
+
+        {/* Concise 1-Line Mission Subhead */}
+        <p className="text-[15.5px] sm:text-[17.5px] md:text-[19px] text-white/95 max-w-[640px] mb-9 font-normal leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          A place where people reconcile with God and enjoy life in abundance.
+        </p>
+
+        {/* 2 Crisp, High-Impact Pill Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/contact?tab=visit"
-            className="inline-flex items-center gap-2 bg-[#4F7942] hover:bg-[#3d6032] text-white font-montserrat text-[14.5px] md:text-[15.5px] font-semibold px-7 py-3.5 rounded-full transition-all duration-200 shadow-[0_8px_20px_rgba(79,121,66,0.4)] hover:shadow-[0_12px_28px_rgba(79,121,66,0.55)] hover:scale-[1.02]"
+            className="inline-flex items-center gap-2.5 bg-[#4F7942] hover:bg-[#3d6032] text-white font-montserrat text-[14px] md:text-[15px] font-bold uppercase tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-[0_8px_24px_rgba(79,121,66,0.45)] hover:shadow-[0_12px_30px_rgba(79,121,66,0.65)] hover:-translate-y-0.5"
           >
-            <span>PLAN YOUR VISIT</span>
-            <span className="text-[17px]">→</span>
+            <span>Plan A Visit</span>
+            <span>→</span>
           </Link>
 
           <Link
-            href="/rides"
-            className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/50 text-white font-montserrat text-[14.5px] md:text-[15.5px] font-semibold px-6 py-3.5 rounded-full transition-all duration-200 shadow-md hover:scale-[1.02]"
+            href="/sermons"
+            className="inline-flex items-center gap-2.5 bg-white/15 hover:bg-white hover:text-[#141814] backdrop-blur-md border border-white/60 text-white font-montserrat text-[14px] md:text-[15px] font-bold uppercase tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:-translate-y-0.5"
           >
+            <span>Watch Online</span>
+          </Link>
+        </div>
+
+        {/* Subtle Secondary Link for Free Sunday Rides */}
+        <div className="mt-5">
+          <Link
+            href="/rides"
+            className="inline-flex items-center gap-2 text-[13.5px] font-medium text-white/85 hover:text-white transition-colors drop-shadow"
+          >
+            <span>Need a free ride to Sunday service?</span>
+            <span className="underline underline-offset-4 font-semibold text-[#8ce078]">
+              Book a Ride →
+            </span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Discreet Corner Circular Audio Button */}
+      <div className="relative z-20 max-w-[1220px] w-full mx-auto px-5 pb-4 flex justify-end pointer-events-none">
+        <button
+          type="button"
+          onClick={toggleSound}
+          aria-label={isMuted ? "Unmute worship audio" : "Mute worship audio"}
+          title={isMuted ? "Unmute worship audio" : "Mute worship audio"}
+          className="pointer-events-auto inline-flex items-center gap-2 bg-black/50 hover:bg-black/80 backdrop-blur-md border border-white/25 text-white/90 hover:text-white px-3.5 py-2 rounded-full transition-all cursor-pointer shadow-lg"
+        >
+          {isMuted ? (
+            <>
+              <svg
+                className="w-4 h-4 text-white/85"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"
+                />
+              </svg>
+              <span className="text-[11.5px] font-semibold uppercase tracking-wider hidden sm:inline">
+                Sound Off
+              </span>
+            </>
+          ) : (
+            <>
+              <svg
+                className="w-4 h-4 text-[#8ce078] animate-pulse"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+              </svg>
+              <span className="text-[11.5px] font-semibold uppercase tracking-wider text-[#8ce078] hidden sm:inline">
+                Sound On
+              </span>
+            </>
+          )}
+        </button>
+      </div>
+
+      {/* ===================================================================
+          TRANSFORMATION CHURCH-STYLE DOCKED BOTTOM SERVICE & LOCATION BAR
+          =================================================================== */}
+      <div className="relative z-20 w-full bg-[#0d120d]/95 backdrop-blur-md border-t border-white/10 text-white">
+        <div className="max-w-[1220px] mx-auto px-5 sm:px-8 py-4 flex flex-col lg:flex-row items-center justify-between gap-3 text-center lg:text-left">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-1.5 text-[12.5px] sm:text-[13.5px]">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#4F7942]" />
+              <span className="text-white/60 uppercase tracking-wider font-semibold text-[11.5px]">
+                Sundays:
+              </span>
+              <strong className="font-semibold text-white">
+                9:30 AM (Sunday School &amp; Worship)
+              </strong>
+            </div>
+
+            <span className="hidden sm:inline text-white/20">|</span>
+
+            <div className="flex items-center gap-1.5">
+              <span className="text-white/60 uppercase tracking-wider font-semibold text-[11.5px]">
+                Wednesdays:
+              </span>
+              <strong className="font-semibold text-white">
+                7:00 PM (Bible Study &amp; 2nd Wed Communion)
+              </strong>
+            </div>
+
+            <span className="hidden md:inline text-white/20">|</span>
+
+            <div className="flex items-center gap-1.5">
+              <span className="text-white/60 uppercase tracking-wider font-semibold text-[11.5px]">
+                Hilltop Youth:
+              </span>
+              <a
+                href={churchInfo.hilltopChurch.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#8ce078] hover:underline"
+              >
+                Sundays 12:00 PM ↗
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 text-[12.5px] sm:text-[13px] text-white/80 shrink-0">
             <svg
-              className="w-4 h-4 text-white/90"
+              className="w-4 h-4 text-[#8ce078] shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -102,165 +219,18 @@ export default function HomeHeroVideo() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-            <span>NEED A SUNDAY RIDE?</span>
-          </Link>
-
-          <Link
-            href="/sermons"
-            className="inline-flex items-center gap-2 bg-black/35 hover:bg-black/55 backdrop-blur-md border border-white/25 text-white/90 hover:text-white font-montserrat text-[14.5px] md:text-[15.5px] font-medium px-5 py-3.5 rounded-full transition-all duration-200"
-          >
-            <span>WATCH ONLINE</span>
-          </Link>
-        </div>
-      </div>
-
-      {/* ===================================================================
-          STREAMLINED BOTTOM SERVICE BAR: Clean glassmorphic strip
-          =================================================================== */}
-      <div className="relative z-10 w-full max-w-[1140px] mx-auto px-5 pb-5 sm:pb-7">
-        <div className="bg-black/50 hover:bg-black/60 backdrop-blur-md border border-white/15 rounded-2xl p-4 sm:p-5 text-white shadow-2xl transition-colors">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
-            {/* 1. Monthly Celebration */}
-            <div className="sm:pr-4 pt-1.5 sm:pt-0">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#5cb85c]">
-                Monthly Gathering
-              </span>
-              <h3 className="text-[15px] font-bold text-white mt-0.5">
-                Celebration Service
-              </h3>
-              <p className="text-[13px] text-white/80 leading-snug mt-0.5">
-                First Sunday of every Month @ 9:30 AM
-              </p>
-            </div>
-
-            {/* 2. Sunday Worship */}
-            <div className="sm:px-4 pt-3 sm:pt-0">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#5cb85c]">
-                Weekly Worship
-              </span>
-              <h3 className="text-[15px] font-bold text-white mt-0.5">
-                Sunday School &amp; Worship
-              </h3>
-              <p className="text-[13px] text-white/80 leading-snug mt-0.5">
-                Every Sunday @ 9:30 AM (In-Person &amp; Live)
-              </p>
-            </div>
-
-            {/* 3. Youth & Young Adults */}
-            <div className="sm:px-4 pt-3 sm:pt-0">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#5cb85c]">
-                  Youth &amp; Students
-                </span>
-                <a
-                  href={churchInfo.hilltopChurch.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] text-white/90 hover:text-white bg-white/20 px-2 py-0.5 rounded font-medium transition-colors"
-                >
-                  Visit ↗
-                </a>
-              </div>
-              <h3 className="text-[15px] font-bold text-white mt-0.5">
-                The Hilltop Church
-              </h3>
-              <p className="text-[13px] text-white/80 leading-snug mt-0.5">
-                Every Sunday @ 12:00 PM (Youth Expression)
-              </p>
-            </div>
-
-            {/* 4. Mid-Week Bible Study */}
-            <div className="sm:pl-4 pt-3 sm:pt-0">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#5cb85c]">
-                Mid-Week Growth
-              </span>
-              <h3 className="text-[15px] font-bold text-white mt-0.5">
-                Digging Deep Bible Study
-              </h3>
-              <p className="text-[13px] text-white/80 leading-snug mt-0.5">
-                Wednesdays @ 7:00 PM (In-Person &amp; Online)
-              </p>
-            </div>
+            <span>234 13 Street North, Lethbridge, AB</span>
           </div>
         </div>
-
-        {/* Minimalist Floating Controls: Subtle audio toggle & live status */}
-        <div className="mt-3 flex items-center justify-between text-xs text-white/75">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 bg-black/45 backdrop-blur-sm border border-white/15 px-3 py-1 rounded-full text-white/90">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5cb85c] animate-pulse" />
-              <span>Live Sanctuary Highlights</span>
-            </span>
-          </div>
-
-          {/* Audio Mute / Unmute Button */}
-          <button
-            type="button"
-            onClick={toggleSound}
-            className="inline-flex items-center gap-2 bg-black/45 hover:bg-black/75 backdrop-blur-sm border border-white/20 text-white/90 hover:text-white px-3.5 py-1.5 rounded-full transition-all cursor-pointer shadow-md"
-            title={isMuted ? "Unmute church worship" : "Mute audio"}
-          >
-            {isMuted ? (
-              <>
-                <svg
-                  className="w-3.5 h-3.5 text-white/75"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"
-                  />
-                </svg>
-                <span>Sound Off</span>
-              </>
-            ) : (
-              <>
-                <svg
-                  className="w-3.5 h-3.5 text-[#5cb85c] animate-pulse"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
-                  />
-                </svg>
-                <span className="text-[#5cb85c] font-medium">Playing Audio</span>
-              </>
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Clean Bottom Geometric Transition */}
-      <div
-        className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none flex justify-center z-20"
-        aria-hidden="true"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 100"
-          preserveAspectRatio="none"
-          className="w-[30%] md:w-[40%] h-[16px] md:h-[26px] block"
-        >
-          <path fill="#ffffff" d="M500,98.9L0,6.1V0h1000v6.1L500,98.9z" />
-        </svg>
       </div>
     </section>
   );

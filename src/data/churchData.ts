@@ -59,39 +59,36 @@ export interface NavItem {
 }
 
 export const navigationMenu: NavItem[] = [
-  { label: "HOME", href: "/" },
   {
-    label: "I’M NEW",
-    href: "#",
+    label: "About",
+    href: "/about",
     children: [
-      { label: "ABOUT", href: "/about" },
-      { label: "STATEMENT OF FAITH", href: "/statement-of-faith" },
-      { label: "OUR MISSION", href: "/our-mission" },
-      { label: "PLAN A VISIT", href: "/contact?tab=visit" },
-      { label: "SUNDAY RIDES", href: "/rides" },
+      { label: "About Our Parish", href: "/about" },
+      { label: "Statement of Faith", href: "/statement-of-faith" },
+      { label: "Our Mission & Vision", href: "/our-mission" },
+      { label: "Plan a Visit", href: "/contact?tab=visit" },
     ],
   },
   {
-    label: "MINISTRIES",
+    label: "Ministries",
     href: "#",
     children: [
-      { label: "COMMUNITY OUTREACH", href: "/community-outreach" },
-      { label: "YOUTH (HILLTOP CHURCH)", href: "/youth" },
+      { label: "Youth — Hilltop Church", href: "/youth" },
+      { label: "Community Outreach & Care", href: "/community-outreach" },
+      { label: "Young Adult Hangout", href: "/youth-adult-hangout" },
     ],
   },
-  { label: "SERMONS", href: "/sermons" },
-  { label: "GIVING", href: "/giving" },
-  { label: "NEWS & EVENTS", href: "/news-events" },
+  { label: "Sermons", href: "/sermons" },
   {
-    label: "MEDIA",
-    href: "#",
+    label: "Events & Media",
+    href: "/news-events",
     children: [
-      { label: "GALLERY & REELS", href: "/gallery" },
-      { label: "YOUTH ADULT HANGOUT", href: "/youth-adult-hangout" },
+      { label: "Upcoming Events", href: "/news-events" },
+      { label: "Gallery & Worship Reels", href: "/gallery" },
     ],
   },
-  { label: "SUNDAY RIDES", href: "/rides" },
-  { label: "CONTACT", href: "/contact" },
+  { label: "Sunday Rides", href: "/rides" },
+  { label: "Give", href: "/giving" },
 ];
 
 export interface SermonItem {

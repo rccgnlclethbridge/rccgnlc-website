@@ -9,111 +9,85 @@ export default function HomePage() {
   return (
     <div className="w-full">
       {/* =====================================================================
-          SECTION 1: DYNAMIC VIDEO REEL HERO BANNER & CELEBRATION INFO BOXES
+          SECTION 1: UNCLUTTERED FULL-BLEED VIDEO HERO + BOTTOM SERVICE BAR
           ===================================================================== */}
       <HomeHeroVideo />
 
       {/* =====================================================================
-          SECTION 2: COME AND EXPERIENCE A NEW LIFE IN JESUS CHRIST!
+          SECTION 2: WATCH LATEST SERMON SPOTLIGHT (Transformation Church Style)
           ===================================================================== */}
-      <section className="w-full py-[50px] md:py-[70px] bg-white">
-        <div className="max-w-[950px] mx-auto px-5">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            {/* Left Column (45%) */}
-            <div className="md:col-span-5 md:p-4">
-              <h2 className="text-[24px] md:text-[25px] font-semibold leading-[1.3] text-[#4F7942]">
-                Come and Experience a New Life in Jesus Christ!
-              </h2>
-            </div>
-
-            {/* Right Column (55%) */}
-            <div className="md:col-span-7 space-y-6 md:pt-4">
-              <p className="text-[15px] font-normal leading-[1.7] text-[#242424]">
-                New Life Chapel, Lethbridge is a parish of The Redeemed
-                Christian Church of God. We are dedicated and committed to the
-                teaching of the truth which is based on the Bible and to fulfill
-                the Great Commission of our Lord Jesus Christ (Matt 28:19-20).
-                We welcome all without any discrimination on tribe, race, and
-                nationality based on Biblical injunction.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-6">
-                <Link
-                  href="/statement-of-faith"
-                  className="inline-flex items-center justify-center text-[#4F7942] hover:text-[#38592e] text-[16px] font-medium py-2 transition-colors underline-offset-4 hover:underline"
-                >
-                  What to expect →
-                </Link>
-                <Link
-                  href="/contact?tab=prayer"
-                  className="inline-flex items-center justify-center text-[#1d1d23] hover:text-[#4F7942] text-[15px] font-medium py-2 transition-colors underline-offset-4 hover:underline"
-                >
-                  Submit a Prayer Request →
-                </Link>
-              </div>
-            </div>
-          </div>
+      <section className="w-full py-16 md:py-24 bg-[#f7faf6]">
+        <div className="max-w-[1220px] mx-auto px-5 sm:px-8">
+          <LatestSermonsSection />
         </div>
       </section>
 
       {/* =====================================================================
-          SECTION 3: PARALLAX 3-COLUMN BLOCK (PRAYING HANDS | TITLE | TEXT)
+          SECTION 3: WE BELIEVE / WELCOME HOME (Modern Editorial Split)
           ===================================================================== */}
-      <section
-        className="relative w-full py-[50px] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/images/bg-home-middle.jpeg")' }}
-      >
-        {/* Dark Overlay (0.7) */}
-        <div className="absolute inset-0 bg-black/70" />
-
-        <div className="relative z-10 max-w-[1130px] mx-auto px-5">
-          <div className="grid grid-cols-1 md:grid-cols-12">
-            {/* Column 1 (33%): Green Box with Praying Hands Icon */}
-            <div className="md:col-span-4 bg-[#4F7942] flex items-center justify-center py-12 md:pt-[90px] md:pb-[33px] px-6">
-              <div className="w-[120px] h-[120px] rounded-full border-2 border-white flex items-center justify-center text-white">
-                {/* FontAwesome fa-praying-hands SVG */}
-                <svg
-                  className="w-14 h-14 fill-current"
-                  viewBox="0 0 640 512"
-                  aria-hidden="true"
-                >
-                  <path d="M304 96v320c0 17.7-14.3 32-32 32s-32-14.3-32-32V235.1l-84.9 74.3c-6.8 5.9-14.8 9.8-23.3 11.5l-91.8 18.4C20.2 343.2 0 328 0 307.8V288c0-13.8 8.9-26 22-30.4l65.7-21.9 85.7-85.7V64c0-17.7 14.3-32 32-32s32 14.3 32 32v13.3l9.4-9.4c12.5-12.5 32.8-12.5 45.3 0C299.3 75.1 304 85 304 96zm32 0c0-11 4.7-20.9 11.9-28.1 12.5-12.5 32.8-12.5 45.3 0l9.4 9.4V64c0-17.7 14.3-32 32-32s32 14.3 32 32v86l85.7 85.7 65.7 21.9c13.1 4.4 22 16.6 22 30.4v19.8c0 20.2-20.2 35.4-40 31.5l-91.8-18.4c-8.5-1.7-16.5-5.6-23.3-11.5L399.9 235.1V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V96z" />
-                </svg>
+      <section className="w-full py-16 md:py-24 bg-white">
+        <div className="max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left 6 Cols: Stacked Editorial Imagery */}
+            <div className="lg:col-span-6 relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] aspect-[4/3]">
+                <img
+                  src="/images/gallery-01.jpg"
+                  alt="Worship and Fellowship at RCCG New Life Chapel Lethbridge"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <span className="inline-block bg-[#4F7942] text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-1.5">
+                    John 10:10
+                  </span>
+                  <p className="text-[14px] font-medium text-white/95">
+                    “A clinic for sinners, a home for spiritual maturity, and an
+                    outpost for touching the world.”
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Column 2 (24%): Black Box with Divider & Heading */}
-            <div className="md:col-span-3 bg-black flex flex-col justify-center p-[30px]">
-              <div className="w-1/2 h-[5px] bg-[#4F7942] mb-5" />
-              <h2 className="text-[32px] md:text-[2.2rem] font-semibold leading-[1.2] text-white">
-                RCCG New Life Chapel
-              </h2>
-            </div>
+            {/* Right 6 Cols: Editorial Copy & CTAs */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.22em] text-[#4F7942]">
+                <span>WE BELIEVE • OUR HEART</span>
+              </div>
 
-            {/* Column 3 (43%): Black Box with Welcome Text & Learn More Button */}
-            <div className="md:col-span-5 bg-black p-[29px] space-y-4 flex flex-col justify-center">
-              <p className="text-[15px] md:text-[1rem] leading-[1.6] text-white">
-                Welcome to RCCG New Life Chapel Lethbridge where people
-                reconcile with God and enjoy life in abundance – John 10:10.
+              <h2 className="font-montserrat text-[30px] sm:text-[38px] md:text-[44px] font-extrabold uppercase tracking-tight text-[#141814] leading-[1.1]">
+                You Are Welcome, <br />
+                Because You Belong Here.
+              </h2>
+
+              <p className="text-[15.5px] md:text-[16.5px] text-gray-700 leading-[1.75]">
+                New Life Chapel, Lethbridge is a parish of The Redeemed
+                Christian Church of God. Whether you’re a seeker in search of
+                truth, a student at the University of Lethbridge or Lethbridge
+                Polytechnic, or a family looking for a home church, we welcome
+                all with open arms and an open Bible.
               </p>
-              <p className="text-[15px] md:text-[1rem] leading-[1.6] text-white">
-                We are delighted to have you visit us. Whether you’re a seeker
-                in search of truth, or a new member of the community looking for
-                a home church, we invite you to be our guest at RCCG New Life
-                Chapel, Lethbridge.
+
+              <p className="text-[15.5px] md:text-[16.5px] text-gray-700 leading-[1.75]">
+                We understand that our journeys are different, but when we move
+                towards Jesus, our direction is the same. Our desire is to help
+                you discover your purpose, grow in grace, and make an eternal
+                difference.
               </p>
-              <p className="text-[15px] md:text-[1rem] leading-[1.6] text-white">
-                Here, we seek to embody the love and grace of God and to live by
-                His word. This means open arms and an open Bible. Our Church is
-                a clinic for sinners, a home for spiritual maturity, and an
-                outpost for touching the world.
-              </p>
-              <div className="pt-2">
+
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Link
                   href="/about"
-                  className="inline-flex items-center justify-center font-montserrat text-[0.9rem] font-semibold tracking-[2px] text-white border-2 border-white px-6 py-3 hover:bg-white hover:text-black transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#141814] hover:bg-[#4F7942] text-white font-montserrat text-[13.5px] font-bold uppercase tracking-wider px-7 py-3.5 rounded-full transition-all shadow-md"
                 >
-                  LEARN MORE
+                  <span>Meet Our Parish</span>
+                  <span>→</span>
+                </Link>
+                <Link
+                  href="/statement-of-faith"
+                  className="inline-flex items-center gap-2 bg-[#f2f7f0] hover:bg-[#e3efe0] text-[#4F7942] font-montserrat text-[13.5px] font-bold uppercase tracking-wider px-6 py-3.5 rounded-full transition-all"
+                >
+                  <span>What We Believe</span>
                 </Link>
               </div>
             </div>
@@ -122,74 +96,110 @@ export default function HomePage() {
       </section>
 
       {/* =====================================================================
-          SECTION 4: YOU ARE WELCOME, BECAUSE YOU BELONG HERE! + LIVE SERMONS
+          SECTION 4: MINISTRIES & NEXT GEN (Transformation Church Visual Cards)
           ===================================================================== */}
-      <section className="w-full py-[64px] md:py-[74px] bg-white">
-        <div className="max-w-[1140px] mx-auto px-5">
-          {/* Centered Heading & Intro */}
-          <div className="text-center max-w-[640px] mx-auto space-y-4">
-            <h2 className="text-[25px] font-semibold text-[#4F7942]">
-              You are welcome, because you belong here!
-            </h2>
-            <p className="text-[15px] text-black leading-[1.6]">
-              We understand that our journeys are different but when we move
-              towards Jesus, our direction is the same! It’s our core aim to
-              help you discover your purpose and your place – to help you learn
-              why you were created and the difference you can make.
+      <section className="w-full py-16 md:py-24 bg-[#111511] text-white">
+        <div className="max-w-[1220px] mx-auto px-5 sm:px-8">
+          {/* Header */}
+          <div className="max-w-[720px] mb-12 space-y-3">
+            <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#8ce078]">
+              MINISTRIES &amp; EXPRESSIONS
             </p>
+            <h2 className="font-montserrat text-[30px] sm:text-[38px] md:text-[44px] font-extrabold uppercase tracking-tight text-white leading-[1.1]">
+              Raising Leaders &amp; Touching Our City.
+            </h2>
           </div>
 
-          {/* 2-Column Image + Latest Messages Row */}
-          <div className="mt-10 max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Left Image: preacher-1.jpg */}
-            <div className="p-2">
+          {/* 2 Large Editorial Ministry Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Card 1: Youth & Young Adults -> The Hilltop Church */}
+            <div className="group relative rounded-3xl overflow-hidden min-h-[420px] sm:min-h-[460px] flex flex-col justify-end p-7 sm:p-10 border border-white/10 shadow-2xl">
               <img
-                src="/images/preacher-1.jpg"
-                alt="Latest Messages at RCCG New Life Chapel"
-                className="w-full h-auto rounded-sm shadow-sm object-cover"
+                src="/images/youth-main.jpg"
+                alt="The Hilltop Church - Youth & Young Adults"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/20" />
+
+              <div className="relative z-10 space-y-3">
+                <span className="inline-block bg-[#4F7942] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full">
+                  SUNDAYS AT 12:00 PM • STUDENTS &amp; YOUNG ADULTS
+                </span>
+                <h3 className="font-montserrat text-[26px] sm:text-[32px] font-extrabold uppercase tracking-tight text-white leading-tight">
+                  RCCG Hilltop Church
+                </h3>
+                <p className="text-[15px] text-white/85 leading-relaxed max-w-[520px]">
+                  Our vibrant Youth &amp; Young Adults expression in Lethbridge
+                  — equipping students, young professionals, and young families
+                  to be heaven-ready and earthly relevant.
+                </p>
+                <div className="pt-3 flex flex-wrap items-center gap-3">
+                  <a
+                    href={churchInfo.hilltopChurch.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white text-[#141814] hover:bg-[#8ce078] font-montserrat text-[13px] font-bold uppercase tracking-wider px-6 py-3 rounded-full transition-colors"
+                  >
+                    <span>Visit thehilltopch.ca</span>
+                    <span>↗</span>
+                  </a>
+                  <Link
+                    href="/youth"
+                    className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white font-montserrat text-[13px] font-bold uppercase tracking-wider px-5 py-3 rounded-full transition-colors"
+                  >
+                    <span>Learn More</span>
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* Right Text: Latest Messages */}
-            <div className="space-y-4 md:pl-4">
-              <div className="w-[18%] h-[4px] bg-[#4F7942]" />
-              <h3 className="text-[20px] font-semibold text-[#4F7942]">
-                Latest Messages
-              </h3>
-              <p className="text-[15px] text-[#1d1d23] leading-[1.6]">
-                Here you’ll find our latest message each week. Whether you’re
-                out of town, unable to make it on-location, or wanted to share a
-                message with a friend, it’s all available here. Watch our most
-                recent services below or browse our full archive.
-              </p>
-              <div className="pt-2">
-                <Link
-                  href="/sermons"
-                  className="inline-flex items-center gap-6 bg-white hover:bg-gray-50 text-[#4F7942] text-[16px] font-medium px-6 py-3 rounded shadow-[0px_12px_24px_-8px_rgba(59,79,228,0.4)] transition-all"
-                >
-                  <span>Messages</span>
-                  <svg
-                    className="w-4 h-4 fill-current"
-                    viewBox="0 0 448 512"
-                    aria-hidden="true"
+            {/* Card 2: Community Outreach, Food Bank & Christian Counselling */}
+            <div className="group relative rounded-3xl overflow-hidden min-h-[420px] sm:min-h-[460px] flex flex-col justify-end p-7 sm:p-10 border border-white/10 shadow-2xl">
+              <img
+                src="/images/gallery-04.jpg"
+                alt="Community Outreach, Food Bank & Counselling"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/20" />
+
+              <div className="relative z-10 space-y-3">
+                <span className="inline-block bg-white/20 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full">
+                  COMPASSION • FOOD BANK • CHRISTIAN COUNSELLING
+                </span>
+                <h3 className="font-montserrat text-[26px] sm:text-[32px] font-extrabold uppercase tracking-tight text-white leading-tight">
+                  Community Outreach &amp; Care
+                </h3>
+                <p className="text-[15px] text-white/85 leading-relaxed max-w-[520px]">
+                  Demonstrating the love of Jesus across Southern Alberta
+                  through our church Food Bank, professional Christian
+                  counselling, family support, and city-wide outreach.
+                </p>
+                <div className="pt-3 flex flex-wrap items-center gap-3">
+                  <Link
+                    href="/community-outreach"
+                    className="inline-flex items-center gap-2 bg-[#4F7942] hover:bg-[#3d6032] text-white font-montserrat text-[13px] font-bold uppercase tracking-wider px-6 py-3 rounded-full transition-colors"
                   >
-                    <path d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z" />
-                  </svg>
-                </Link>
+                    <span>Explore Outreach</span>
+                    <span>→</span>
+                  </Link>
+                  <Link
+                    href="/contact?tab=counselling"
+                    className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white font-montserrat text-[13px] font-bold uppercase tracking-wider px-5 py-3 rounded-full transition-colors"
+                  >
+                    <span>Book Counselling</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Live 3 Latest YouTube Sermons Feed */}
-          <LatestSermonsSection />
         </div>
       </section>
 
       {/* =====================================================================
           SECTION 5: INSTAGRAM REELS & WORSHIP HIGHLIGHTS (@rccgnlclethbridge)
           ===================================================================== */}
-      <section className="w-full py-14 md:py-18 bg-[#f9fbf9] border-t border-gray-100">
-        <div className="max-w-[1140px] mx-auto px-5">
+      <section className="w-full py-16 md:py-24 bg-[#f7faf6]">
+        <div className="max-w-[1220px] mx-auto px-5 sm:px-8">
           <InstagramReelsSection
             limit={4}
             showViewAllButton={true}
@@ -200,20 +210,29 @@ export default function HomePage() {
       </section>
 
       {/* =====================================================================
-          SECTION 6: QUICK CONNECT, PRAYER & COMMUNITY CARE BAR
+          SECTION 6: TAKE YOUR NEXT STEP (Connect & Care Bento Strip)
           ===================================================================== */}
-      <section className="w-full py-12 md:py-16 bg-white border-t border-gray-100">
-        <div className="max-w-[1140px] mx-auto px-5">
+      <section className="w-full py-16 md:py-20 bg-white border-t border-gray-100">
+        <div className="max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div className="text-center max-w-[640px] mx-auto mb-10 space-y-2">
+            <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#4F7942]">
+              GET CONNECTED
+            </p>
+            <h2 className="font-montserrat text-[28px] sm:text-[34px] font-extrabold uppercase tracking-tight text-[#141814]">
+              Take Your Next Step
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <Link
               href="/contact?tab=visit"
-              className="group p-6 rounded-lg bg-[#f2f7f0] hover:bg-[#4F7942] border border-[#4F7942]/20 transition-all space-y-2"
+              className="group p-7 rounded-2xl bg-[#f7faf6] hover:bg-[#4F7942] border border-[#4F7942]/15 transition-all duration-300 space-y-2.5 shadow-2xs hover:shadow-xl hover:-translate-y-1"
             >
-              <span className="text-[12px] font-semibold uppercase tracking-wider text-[#4F7942] group-hover:text-white/80">
-                I’m New Here
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#4F7942] group-hover:text-white/80">
+                01 • I’m New Here
               </span>
-              <h3 className="text-[18px] font-semibold text-[#1d1d23] group-hover:text-white">
-                Plan Your First Visit →
+              <h3 className="font-montserrat text-[18px] font-bold text-[#141814] group-hover:text-white">
+                Plan Your Visit →
               </h3>
               <p className="text-[13.5px] text-gray-600 group-hover:text-white/90 leading-relaxed">
                 Let our Welcome Team know you’re coming this Sunday so we can
@@ -222,50 +241,50 @@ export default function HomePage() {
             </Link>
 
             <Link
+              href="/rides"
+              className="group p-7 rounded-2xl bg-[#f7faf6] hover:bg-[#4F7942] border border-[#4F7942]/15 transition-all duration-300 space-y-2.5 shadow-2xs hover:shadow-xl hover:-translate-y-1"
+            >
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#4F7942] group-hover:text-white/80">
+                02 • Free Transportation
+              </span>
+              <h3 className="font-montserrat text-[18px] font-bold text-[#141814] group-hover:text-white">
+                Book a Sunday Ride →
+              </h3>
+              <p className="text-[13.5px] text-gray-600 group-hover:text-white/90 leading-relaxed">
+                Need a ride to church in Lethbridge? Request free door-to-door
+                pickup for Sunday service.
+              </p>
+            </Link>
+
+            <Link
               href="/contact?tab=prayer"
-              className="group p-6 rounded-lg bg-[#f2f7f0] hover:bg-[#4F7942] border border-[#4F7942]/20 transition-all space-y-2"
+              className="group p-7 rounded-2xl bg-[#f7faf6] hover:bg-[#4F7942] border border-[#4F7942]/15 transition-all duration-300 space-y-2.5 shadow-2xs hover:shadow-xl hover:-translate-y-1"
             >
-              <span className="text-[12px] font-semibold uppercase tracking-wider text-[#4F7942] group-hover:text-white/80">
-                Intercession
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#4F7942] group-hover:text-white/80">
+                03 • Intercession
               </span>
-              <h3 className="text-[18px] font-semibold text-[#1d1d23] group-hover:text-white">
-                Submit a Prayer Request →
+              <h3 className="font-montserrat text-[18px] font-bold text-[#141814] group-hover:text-white">
+                Prayer &amp; Testimony →
               </h3>
               <p className="text-[13.5px] text-gray-600 group-hover:text-white/90 leading-relaxed">
-                How can we stand in faith with you this week? Share your prayer
-                need confidentially.
+                Share a confidential prayer request with our pastors or rejoice
+                with a praise report!
               </p>
             </Link>
 
             <Link
-              href="/contact?tab=testimony"
-              className="group p-6 rounded-lg bg-[#f2f7f0] hover:bg-[#4F7942] border border-[#4F7942]/20 transition-all space-y-2"
+              href="/giving"
+              className="group p-7 rounded-2xl bg-[#f7faf6] hover:bg-[#4F7942] border border-[#4F7942]/15 transition-all duration-300 space-y-2.5 shadow-2xs hover:shadow-xl hover:-translate-y-1"
             >
-              <span className="text-[12px] font-semibold uppercase tracking-wider text-[#4F7942] group-hover:text-white/80">
-                Praise Report
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#4F7942] group-hover:text-white/80">
+                04 • Generosity
               </span>
-              <h3 className="text-[18px] font-semibold text-[#1d1d23] group-hover:text-white">
-                Share a Testimony →
+              <h3 className="font-montserrat text-[18px] font-bold text-[#141814] group-hover:text-white">
+                Ways to Give →
               </h3>
               <p className="text-[13.5px] text-gray-600 group-hover:text-white/90 leading-relaxed">
-                Has God answered a prayer or blessed your family? Rejoice with
-                the church family!
-              </p>
-            </Link>
-
-            <Link
-              href="/community-outreach"
-              className="group p-6 rounded-lg bg-[#f2f7f0] hover:bg-[#4F7942] border border-[#4F7942]/20 transition-all space-y-2"
-            >
-              <span className="text-[12px] font-semibold uppercase tracking-wider text-[#4F7942] group-hover:text-white/80">
-                Food Bank &amp; Care
-              </span>
-              <h3 className="text-[18px] font-semibold text-[#1d1d23] group-hover:text-white">
-                Outreach &amp; Support →
-              </h3>
-              <p className="text-[13.5px] text-gray-600 group-hover:text-white/90 leading-relaxed">
-                Request food bank support, book Christian counselling, or
-                volunteer in Lethbridge.
+                Partner with the mission of RCCG New Life Chapel via Interac
+                e-Transfer, cheque, or in person.
               </p>
             </Link>
           </div>
