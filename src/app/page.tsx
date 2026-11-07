@@ -245,14 +245,13 @@ export default function HomePage() {
               className="group p-7 rounded-2xl bg-[#f7faf6] hover:bg-[#4F7942] border border-[#4F7942]/15 transition-all duration-300 space-y-2.5 shadow-2xs hover:shadow-xl hover:-translate-y-1"
             >
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#4F7942] group-hover:text-white/80">
-                02 • Free Transportation
+                02 • Transportation
               </span>
               <h3 className="font-montserrat text-[18px] font-bold text-[#141814] group-hover:text-white">
-                Book a Sunday Ride →
+                Sunday Rides →
               </h3>
               <p className="text-[13.5px] text-gray-600 group-hover:text-white/90 leading-relaxed">
-                Need a ride to church in Lethbridge? Request free door-to-door
-                pickup for Sunday service.
+                Free Sunday morning ride pickup across Lethbridge.
               </p>
             </Link>
 

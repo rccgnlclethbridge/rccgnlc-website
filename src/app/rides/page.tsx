@@ -24,17 +24,12 @@ export default function RidesPage() {
       {/* Top Direct Navigation Banner */}
       <div className="max-w-[720px] mx-auto px-4 mb-5">
         <div className="bg-white border border-[#4F7942]/20 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
-          <div className="flex items-center gap-3 text-left">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#4F7942] animate-pulse shrink-0" />
-            <div>
+            <div className="flex items-center gap-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#4F7942] animate-pulse shrink-0" />
               <p className="text-[14px] font-bold text-[#141814]">
                 RCCG New Life Chapel Sunday Rides (9:30 AM Service)
               </p>
-              <p className="text-[12px] text-gray-500">
-                Complimentary door-to-door transportation across Lethbridge
-              </p>
             </div>
-          </div>
 
           <a
             href="https://www.thehilltopch.ca/rides"

@@ -156,9 +156,9 @@ export default function CommunityOutreachPage() {
                   Sunday Rides &amp; Student Support
                 </h3>
                 <p className="text-[14.5px] text-[#242424] leading-[1.6]">
-                  New to Lethbridge or need transportation to service? Our
-                  volunteer drivers provide free Sunday rides across the city so
-                  everyone can worship in community.
+                  Need a ride to church? Our volunteer drivers provide free
+                  Sunday morning pickup across Lethbridge so everyone can worship
+                  in community.
                 </p>
               </div>
               <div className="pt-1">

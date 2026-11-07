@@ -11,6 +11,9 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
+  // Suppress desktop header on standalone mobile link-in-bio page
+  if (pathname === "/links") return null;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 16);
