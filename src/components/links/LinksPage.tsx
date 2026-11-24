@@ -116,8 +116,8 @@ export function LinksPage() {
           href: "/contact?tab=prayer",
         },
         {
-          label: "Food Bank & Community Outreach",
-          sublabel: "Demonstrating Christ's love across Southern Alberta",
+          label: "Food Pantry & Community Outreach",
+          sublabel: "Open to all in Lethbridge · Grocery & Care Support",
           href: "/community-outreach",
         },
         {

@@ -16,11 +16,20 @@ export const churchInfo = {
     street: "234 13 Street North,",
     cityStateZip: "Lethbridge, Alberta T1H 2R7 Canada.",
     full: "234 13 Street North, Lethbridge, Alberta T1H 2R7 Canada",
-    mailing: "P.O. Box 1632, Lethbridge AB T1J 4K3",
+    mailing: "P.O. Box 1632, Stn Main, Lethbridge, AB T1J 4K3",
     googleMapsEmbedUrl:
       "https://maps.google.com/maps?q=234%2013%20St%20N%20&t=m&z=10&output=embed&iwloc=near",
     googleMapsUrl:
       "https://www.google.com/maps/search/?api=1&query=234+13+Street+North+Lethbridge+AB+T1H+2R7",
+  },
+  charity: {
+    legalName: "The Redeemed Christian Church of God-New Life Chapel, Lethbridge",
+    registrationNumber: "768310716RR0001",
+    designation: "Registered Canadian Charitable Organization",
+    charityDataUrl:
+      "https://www.charitydata.ca/charity/the-redeemed-christian-church-of-god-new-life-chapel-lethbri/768310716RR0001/",
+    craSearchUrl:
+      "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch",
   },
   contact: {
     email: "contact@rccgnlclethbridge.ca",
@@ -76,7 +85,7 @@ export const navigationMenu: NavItem[] = [
     href: "#",
     children: [
       { label: "Youth — Hilltop Church", href: "/youth" },
-      { label: "Community Outreach & Care", href: "/community-outreach" },
+      { label: "Food Pantry & Outreach", href: "/community-outreach" },
       { label: "Young Adult Hangout", href: "/youth-adult-hangout" },
     ],
   },

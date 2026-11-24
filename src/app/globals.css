@@ -13,6 +13,7 @@
   --font-sans: var(--font-poppins), sans-serif;
   --font-montserrat: var(--font-montserrat), sans-serif;
   --font-nunito: var(--font-nunito), sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
 }
 
 body {

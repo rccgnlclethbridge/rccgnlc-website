@@ -200,9 +200,16 @@ export default function GivingPage() {
                 <h3 className="text-[20px] font-semibold text-[#4F7942]">
                   Cheque
                 </h3>
-                <p className="text-[15px] text-[#0C0C0C] leading-[1.6]">
-                  Mail cheques to: RCCG New Life Chapel{" "}
-                  {churchInfo.address.full}
+                <p className="text-[14.5px] text-[#0C0C0C] leading-[1.6]">
+                  Make cheques payable to{" "}
+                  <strong className="font-semibold">
+                    {churchInfo.charity.legalName}
+                  </strong>{" "}
+                  and mail to{" "}
+                  <strong className="font-semibold">
+                    {churchInfo.address.mailing}
+                  </strong>{" "}
+                  (or drop off at 234 13 Street North during service).
                 </p>
               </div>
               <div>
@@ -210,15 +217,15 @@ export default function GivingPage() {
                   type="button"
                   onClick={() =>
                     handleCopy(
-                      `RCCG New Life Chapel, ${churchInfo.address.full}`,
+                      `${churchInfo.charity.legalName}, ${churchInfo.address.mailing}`,
                       "address"
                     )
                   }
                   className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#4F7942] bg-[#f2f7f0] hover:bg-[#e3efe0] px-3 py-1.5 rounded transition-colors cursor-pointer"
                 >
                   {copiedField === "address"
-                    ? "✓ Address Copied!"
-                    : "Copy Mailing Address"}
+                    ? "✓ PO Box Copied!"
+                    : "Copy PO Box Mailing Address"}
                 </button>
               </div>
             </div>
@@ -272,6 +279,90 @@ export default function GivingPage() {
               updated your address? Register your details below so our finance
               team can issue your annual Canadian charitable tax receipt.
             </p>
+          </div>
+
+          {/* Registered Canadian Charity & Stewardship Verification Box */}
+          <div className="bg-[#f2f7f0] border border-[#4F7942]/25 rounded-lg p-5 md:p-6 mb-8 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#4F7942]/15 pb-3">
+              <div>
+                <p className="text-[11.5px] font-bold uppercase tracking-wider text-[#4F7942]">
+                  {churchInfo.charity.designation}
+                </p>
+                <h3 className="text-[17px] font-semibold text-[#1d1d23]">
+                  Registered Charity &amp; Stewardship Verification
+                </h3>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 text-[12.5px] font-semibold">
+                <a
+                  href={churchInfo.charity.charityDataUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#4F7942] hover:underline"
+                >
+                  Verify on CharityData ↗
+                </a>
+                <span className="text-gray-300" aria-hidden="true">
+                  |
+                </span>
+                <a
+                  href={churchInfo.charity.craSearchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#4F7942] hover:underline"
+                >
+                  CRA Charities Listing ↗
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[13.5px]">
+              <div>
+                <p className="text-gray-500 text-[12px] uppercase tracking-wide font-semibold">
+                  Legal Registered Name
+                </p>
+                <p className="font-semibold text-[#1d1d23] mt-0.5">
+                  {churchInfo.charity.legalName}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-500 text-[12px] uppercase tracking-wide font-semibold">
+                  CRA Charity Registration #
+                </p>
+                <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                  <span className="font-mono font-bold text-[#1d1d23]">
+                    {churchInfo.charity.registrationNumber}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      handleCopy(churchInfo.charity.registrationNumber, "bn")
+                    }
+                    className="text-[11.5px] font-semibold text-[#4F7942] bg-white hover:bg-[#E9FCE3] border border-[#4F7942]/30 px-2.5 py-0.5 rounded transition-colors cursor-pointer"
+                  >
+                    {copiedField === "bn" ? "✓ Copied" : "Copy BN"}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <p className="text-gray-500 text-[12px] uppercase tracking-wide font-semibold">
+                  Registered Mailing Address
+                </p>
+                <p className="text-[#1d1d23] mt-0.5">
+                  {churchInfo.address.mailing}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-500 text-[12px] uppercase tracking-wide font-semibold">
+                  Stewardship &amp; Receipt Policy
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-0.5 text-[13px]">
+                  Official Canadian charitable donation receipts are issued
+                  annually for eligible gifts. Spending of funds is confined to
+                  board-approved church programs, local outreach, and food pantry
+                  relief.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="bg-white border border-gray-200 rounded-lg p-6 md:p-8 shadow-xs">
@@ -380,8 +471,11 @@ export default function GivingPage() {
                       <option value="Thanksgiving Offering">
                         Thanksgiving Offering
                       </option>
+                      <option value="Food Pantry & Grocery Hampers">
+                        Food Pantry &amp; Grocery Hampers
+                      </option>
                       <option value="Missions & Community Outreach">
-                        Missions &amp; Community Outreach (Food Bank)
+                        Missions &amp; Community Outreach
                       </option>
                       <option value="Building & Welfare Fund">
                         Building &amp; Welfare Fund

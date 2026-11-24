@@ -4,7 +4,11 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { churchInfo, sermonsList, SermonItem } from "@/data/churchData";
 
-export default function LatestSermonsSection() {
+export default function LatestSermonsSection({
+  dark = false,
+}: {
+  dark?: boolean;
+}) {
   const [sermons, setSermons] = useState<SermonItem[]>(sermonsList.slice(0, 3));
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const [isLiveSynced, setIsLiveSynced] = useState(false);
@@ -42,13 +46,25 @@ export default function LatestSermonsSection() {
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
         <div>
-          <div className="inline-flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.2em] text-[#4F7942] mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#4F7942] animate-pulse" />
+          <div
+            className={`inline-flex items-center gap-2 text-[11.5px] font-bold uppercase tracking-[0.2em] mb-2 ${
+              dark ? "text-[#7CE36B]" : "text-[#4F7942]"
+            }`}
+          >
+            <span
+              className={`w-2 h-2 rounded-full animate-pulse ${
+                dark ? "bg-[#7CE36B]" : "bg-[#4F7942]"
+              }`}
+            />
             <span>
               {isLiveSynced ? "LIVE YOUTUBE CHANNEL FEED" : "LATEST MESSAGES"}
             </span>
           </div>
-          <h2 className="font-montserrat text-[28px] sm:text-[34px] md:text-[40px] font-extrabold uppercase tracking-tight text-[#141814] leading-none">
+          <h2
+            className={`font-montserrat text-[28px] sm:text-[34px] md:text-[40px] font-extrabold uppercase tracking-tight leading-none ${
+              dark ? "text-white" : "text-[#141814]"
+            }`}
+          >
             Watch Latest Sermon
           </h2>
         </div>
@@ -56,7 +72,11 @@ export default function LatestSermonsSection() {
         <div className="flex items-center gap-4">
           <Link
             href="/sermons"
-            className="inline-flex items-center gap-2 text-[13.5px] font-bold uppercase tracking-wider text-[#4F7942] hover:text-[#38592e] transition-colors"
+            className={`inline-flex items-center gap-2 text-[13.5px] font-bold uppercase tracking-wider transition-colors ${
+              dark
+                ? "text-[#7CE36B] hover:text-white"
+                : "text-[#4F7942] hover:text-[#38592e]"
+            }`}
           >
             <span>Full Sermon Archive</span>
             <span>→</span>
@@ -68,7 +88,13 @@ export default function LatestSermonsSection() {
           TRANSFORMATION CHURCH-STYLE FEATURED SERMON SPOTLIGHT CARD
           =================================================================== */}
       {featuredSermon && (
-        <div className="bg-[#141814] text-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-white/10 mb-8">
+        <div
+          className={`bg-[#141814] text-white rounded-3xl overflow-hidden mb-8 border ${
+            dark
+              ? "border-white/15 shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
+              : "border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+          }`}
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             {/* Left 7 Cols: 16:9 Video Player */}
             <div className="lg:col-span-7 relative aspect-video w-full bg-black overflow-hidden">
@@ -161,7 +187,11 @@ export default function LatestSermonsSection() {
             return (
               <div
                 key={sermon.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row items-stretch"
+                className={`group rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col sm:flex-row items-stretch ${
+                  dark
+                    ? "bg-white/[0.06] border-white/10 text-white hover:border-[#7CE36B]/40"
+                    : "bg-white border-gray-200/80 shadow-xs hover:shadow-xl"
+                }`}
               >
                 {/* Thumbnail / Player */}
                 <div className="sm:w-[46%] relative aspect-video sm:aspect-auto bg-black shrink-0 overflow-hidden">
@@ -204,22 +234,40 @@ export default function LatestSermonsSection() {
                 {/* Details */}
                 <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
                   <div className="space-y-1.5">
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#4F7942]">
+                    <span
+                      className={`text-[11px] font-bold uppercase tracking-widest ${
+                        dark ? "text-[#7CE36B]" : "text-[#4F7942]"
+                      }`}
+                    >
                       Recent Service
                     </span>
-                    <h4 className="font-montserrat text-[16px] font-bold text-[#141814] leading-snug line-clamp-2">
+                    <h4
+                      className={`font-montserrat text-[16px] font-bold leading-snug line-clamp-2 ${
+                        dark ? "text-white" : "text-[#141814]"
+                      }`}
+                    >
                       {sermon.title}
                     </h4>
-                    <p className="text-[13px] text-gray-500 line-clamp-1">
+                    <p
+                      className={`text-[13px] line-clamp-1 ${
+                        dark ? "text-white/65" : "text-gray-500"
+                      }`}
+                    >
                       {sermon.subtitle}
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-3 border-t border-gray-100 flex items-center justify-between text-[12.5px]">
+                  <div
+                    className={`pt-4 mt-3 border-t flex items-center justify-between text-[12.5px] ${
+                      dark ? "border-white/10" : "border-gray-100"
+                    }`}
+                  >
                     <button
                       type="button"
                       onClick={() => setActiveVideoId(sermon.id)}
-                      className="font-bold uppercase tracking-wider text-[#4F7942] hover:underline cursor-pointer"
+                      className={`font-bold uppercase tracking-wider hover:underline cursor-pointer ${
+                        dark ? "text-[#7CE36B]" : "text-[#4F7942]"
+                      }`}
                     >
                       {isPlaying ? "Playing Now" : "▶ Watch Here"}
                     </button>
@@ -227,7 +275,11 @@ export default function LatestSermonsSection() {
                       href={sermon.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#141814] font-medium transition-colors"
+                      className={`font-medium transition-colors ${
+                        dark
+                          ? "text-white/60 hover:text-white"
+                          : "text-gray-400 hover:text-[#141814]"
+                      }`}
                     >
                       YouTube ↗
                     </a>

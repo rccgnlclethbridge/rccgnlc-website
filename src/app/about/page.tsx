@@ -197,7 +197,122 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 4: Bottom 3-Image Row */}
+      {/* Section 4: Registered Charity, Governance & Community Standing */}
+      <section className="w-full py-12 md:py-16 bg-white border-b border-gray-100">
+        <div className="max-w-[1140px] mx-auto px-5">
+          <div className="max-w-[760px] mb-10 space-y-3">
+            <div className="w-16 h-[3px] bg-[#4F7942]" />
+            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#4F7942]">
+              Transparency &amp; Public Accountability
+            </p>
+            <h2 className="text-[24px] md:text-[28px] font-semibold text-[#1d1d23]">
+              Registered Charity, Governance &amp; Community Standing
+            </h2>
+            <p className="text-[14.5px] text-gray-600 leading-[1.7]">
+              We operate transparently in Lethbridge under Canadian charitable
+              governance standards, serving both our congregation and the wider
+              Southern Alberta community.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1: CRA Registered Charity */}
+            <div className="bg-[#f2f7f0] border border-[#4F7942]/20 rounded-lg p-6 space-y-3 flex flex-col justify-between">
+              <div className="space-y-2.5">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#4F7942] bg-white px-2.5 py-1 rounded border border-[#4F7942]/20">
+                  CRA BN: {churchInfo.charity.registrationNumber}
+                </span>
+                <h3 className="text-[18px] font-semibold text-[#1d1d23]">
+                  CRA Registered Charity
+                </h3>
+                <p className="text-[14px] text-[#242424] leading-[1.65]">
+                  Legally registered with the Canada Revenue Agency as{" "}
+                  <strong className="font-semibold">
+                    {churchInfo.charity.legalName}
+                  </strong>{" "}
+                  (Charitable Organization) and affiliated with The Redeemed
+                  Christian Church of God (RCCG).
+                </p>
+              </div>
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-[13px] font-semibold">
+                <a
+                  href={churchInfo.charity.charityDataUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#4F7942] hover:underline"
+                >
+                  CharityData Profile ↗
+                </a>
+                <a
+                  href={churchInfo.charity.craSearchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#4F7942] hover:underline"
+                >
+                  CRA Directory ↗
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2: Local Civic & Ministerial Engagement */}
+            <div className="bg-[#f9fbf9] border border-gray-200 rounded-lg p-6 space-y-3 flex flex-col justify-between">
+              <div className="space-y-2.5">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#4F7942] bg-[#E9FCE3] px-2.5 py-1 rounded">
+                  Community Partnerships
+                </span>
+                <h3 className="text-[18px] font-semibold text-[#1d1d23]">
+                  Local Civic &amp; Ministerial Engagement
+                </h3>
+                <p className="text-[14px] text-[#242424] leading-[1.65]">
+                  Our parish actively participates in the{" "}
+                  <strong className="font-semibold">
+                    Lethbridge Evangelical Ministerial Association
+                  </strong>
+                  , local joint community church gatherings, and city-wide care
+                  initiatives supporting families and newcomers.
+                </p>
+              </div>
+              <div className="pt-2">
+                <Link
+                  href="/contact"
+                  className="text-[13px] font-semibold text-[#4F7942] hover:underline"
+                >
+                  Connect With Our Leadership →
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3: Open-Access Community Policy */}
+            <div className="bg-[#f9fbf9] border border-gray-200 rounded-lg p-6 space-y-3 flex flex-col justify-between">
+              <div className="space-y-2.5">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#4F7942] bg-[#E9FCE3] px-2.5 py-1 rounded">
+                  Open Access · Non-Discriminatory
+                </span>
+                <h3 className="text-[18px] font-semibold text-[#1d1d23]">
+                  Open-Access Community Policy
+                </h3>
+                <p className="text-[14px] text-[#242424] leading-[1.65]">
+                  All community outreach and relief services — including our
+                  weekly Food Pantry, household goods support, and community
+                  meals — are open to all Lethbridge residents, families, and
+                  students regardless of faith, background, or church
+                  membership.
+                </p>
+              </div>
+              <div className="pt-2">
+                <Link
+                  href="/community-outreach"
+                  className="text-[13px] font-semibold text-[#4F7942] hover:underline"
+                >
+                  Explore Food Pantry &amp; Care →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Bottom 3-Image Row */}
       <section className="w-full py-[60px] bg-white">
         <div className="max-w-[1140px] mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

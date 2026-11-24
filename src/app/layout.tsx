@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins, Montserrat, Nunito } from "next/font/google";
+import { Poppins, Montserrat, Nunito, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { BuildPreviewProvider } from "@/components/BuildPreviewProvider";
 import { churchInfo } from "@/data/churchData";
 
 const poppins = Poppins({
@@ -23,6 +24,13 @@ const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -84,6 +92,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Church",
     name: churchInfo.name,
+    legalName: churchInfo.charity.legalName,
+    taxID: churchInfo.charity.registrationNumber,
     alternateName: churchInfo.shortName,
     description:
       "Welcome to RCCG New Life Chapel Lethbridge where people reconcile with God and enjoy life in abundance – John 10:10.",
@@ -119,23 +129,26 @@ export default function RootLayout({
       churchInfo.socials.youtube,
       churchInfo.contact.linktree,
       churchInfo.hilltopChurch.url,
+      churchInfo.charity.charityDataUrl,
     ],
   };
 
   return (
     <html
       lang="en-US"
-      className={`${poppins.variable} ${montserrat.variable} ${nunito.variable} h-full antialiased`}
+      className={`${poppins.variable} ${montserrat.variable} ${nunito.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-[#1d1d23] font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(churchJsonLd) }}
         />
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <ScrollToTop />
+        <BuildPreviewProvider>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          <ScrollToTop />
+        </BuildPreviewProvider>
       </body>
     </html>
   );

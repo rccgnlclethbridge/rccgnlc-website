@@ -44,14 +44,16 @@ export default function RidesPage() {
 
       {/* Embedded Live Rides Booking System */}
       <div className="max-w-[720px] mx-auto px-[10px]">
-        <iframe
-          src="https://www.thehilltopch.ca/rides?church=new-life&theme=light"
-          width="100%"
-          height="1020"
-          allow="clipboard-write"
-          title="Sunday Rides - RCCG New Life Chapel"
-          className="w-full min-h-[850px] h-[1020px] border-0 rounded-[20px] overflow-hidden shadow-[0_10px_35px_rgba(0,0,0,0.1)]"
-        />
+        <div className="rounded-[20px] overflow-hidden shadow-[0_10px_35px_rgba(0,0,0,0.1)] isolate bg-white">
+          <iframe
+            src="https://www.thehilltopch.ca/rides?church=new-life&theme=light"
+            width="100%"
+            height="1020"
+            allow="clipboard-write"
+            title="Sunday Rides - RCCG New Life Chapel"
+            className="block w-full min-h-[850px] h-[1020px] border-0"
+          />
+        </div>
       </div>
     </div>
   );
