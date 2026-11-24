@@ -3,7 +3,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
-export type SiteBuildId = "current" | "editorial" | "cinematic" | "bento";
+export type SiteBuildId =
+  | "current"
+  | "transformation"
+  | "elevation"
+  | "modern";
 
 interface BuildContextValue {
   build: SiteBuildId;
@@ -20,19 +24,21 @@ const STORAGE_KEY = "nlc-site-build";
 const PARAM_MAP: Record<string, SiteBuildId> = {
   "0": "current",
   current: "current",
-  "1": "editorial",
-  editorial: "editorial",
-  "2": "cinematic",
-  cinematic: "cinematic",
-  "3": "bento",
-  bento: "bento",
+  "1": "transformation",
+  transformation: "transformation",
+  tc: "transformation",
+  "2": "elevation",
+  elevation: "elevation",
+  elev: "elevation",
+  "3": "modern",
+  modern: "modern",
 };
 
 const BUILD_TO_PARAM: Record<SiteBuildId, string | null> = {
   current: null,
-  editorial: "1",
-  cinematic: "2",
-  bento: "3",
+  transformation: "1",
+  elevation: "2",
+  modern: "3",
 };
 
 const BUILD_OPTIONS: {
@@ -41,9 +47,13 @@ const BUILD_OPTIONS: {
   mobileLabel: string;
 }[] = [
   { id: "current", desktopLabel: "Current", mobileLabel: "Curr" },
-  { id: "editorial", desktopLabel: "1 · Editorial", mobileLabel: "1" },
-  { id: "cinematic", desktopLabel: "2 · Cinematic", mobileLabel: "2" },
-  { id: "bento", desktopLabel: "3 · Bento", mobileLabel: "3" },
+  {
+    id: "transformation",
+    desktopLabel: "1 · Transformation",
+    mobileLabel: "1 · TC",
+  },
+  { id: "elevation", desktopLabel: "2 · Elevation", mobileLabel: "2 · Elev" },
+  { id: "modern", desktopLabel: "3 · Modern", mobileLabel: "3 · Mod" },
 ];
 
 export function useSiteBuild() {
@@ -51,8 +61,8 @@ export function useSiteBuild() {
 }
 
 /**
- * Provides global preview switching across the 4 site build themes ("current" plus 3 unique builds)
- * via URL query parameters (?build=1|2|3), localStorage, and a discreet floating bottom toggle pill.
+ * Provides global preview switching across the 4 site builds ("current" plus Transformation,
+ * Elevation, and Modern styles) via ?build=1|2|3, localStorage, and a compact bottom toggle.
  */
 export function BuildPreviewProvider({
   children,
@@ -76,6 +86,9 @@ export function BuildPreviewProvider({
         const stored = window.localStorage.getItem(STORAGE_KEY);
         if (stored && PARAM_MAP[stored]) {
           initial = PARAM_MAP[stored];
+        } else if (stored) {
+          // Reset legacy/stale build identifiers cleanly to default
+          window.localStorage.setItem(STORAGE_KEY, "current");
         }
       }
 

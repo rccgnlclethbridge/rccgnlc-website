@@ -3,21 +3,21 @@
 import React from "react";
 import { useSiteBuild } from "@/components/BuildPreviewProvider";
 import CurrentHomeBuild from "@/components/builds/CurrentHomeBuild";
-import EditorialHomeBuild from "@/components/builds/EditorialHomeBuild";
-import CinematicHomeBuild from "@/components/builds/CinematicHomeBuild";
-import BentoHomeBuild from "@/components/builds/BentoHomeBuild";
+import TransformationHomeBuild from "@/components/builds/TransformationHomeBuild";
+import ElevationHomeBuild from "@/components/builds/ElevationHomeBuild";
+import ModernHomeBuild from "@/components/builds/ModernHomeBuild";
 
 /** Switches homepage layout based on the active preview build toggle. */
 export default function HomeBuildRenderer() {
   const { build } = useSiteBuild();
 
   switch (build) {
-    case "editorial":
-      return <EditorialHomeBuild />;
-    case "cinematic":
-      return <CinematicHomeBuild />;
-    case "bento":
-      return <BentoHomeBuild />;
+    case "transformation":
+      return <TransformationHomeBuild />;
+    case "elevation":
+      return <ElevationHomeBuild />;
+    case "modern":
+      return <ModernHomeBuild />;
     case "current":
     default:
       return <CurrentHomeBuild />;
